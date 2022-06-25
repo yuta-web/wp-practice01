@@ -1,0 +1,68 @@
+@mixin text($fontSize, $lineHeight, $letterSpacing) {
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  letter-spacing: $letterSpacing;
+}
+
+@mixin img($img, $repeat) {
+  background-image: $img;
+  background-repeat: $repeat;
+}
+
+@mixin pseudo {
+  content: "";
+  display: block;
+}
+
+@mixin btmLine($width) {
+  width: $width;
+  height: 3px;
+  border-radius: 1.5px;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-color: $black;
+}
+
+@mixin pc {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin line($top) {
+  background-color: #fff;
+  width: 50px;
+  height: 3px;
+  border-radius: 1.5px;
+  position: absolute;
+  top: $top;
+  transition: .3s;
+}
+
+@function get_vw($size, $viewport:768){
+  $rate: 100 / $viewport;
+  @return $rate * $size * 1vw;
+}
+
+@mixin fz_vw($font_size:10){
+  font-size: $font_size * 1px;
+  font-size: get_vw($font_size);
+}
+
+@mixin hira($top) {
+  content: "きちべえ";
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: $top;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: YuMincho;
+  font-weight: 600;
+  text-align: center;
+}

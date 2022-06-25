@@ -1,0 +1,40 @@
+.kv {
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  position: relative;
+  .fade_item {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-position: center;
+    background-size: cover;
+    &.item01 {
+      background-image: url('../images/kv_01_sp.png');
+    }
+    &.item02 {
+      background-image: url('../images/kv_02_sp.png');
+    }
+  }
+  .kv_logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  section.kv {
+    .fade_item {
+      &.item01 {
+        background-image: url('../images/kv_01.png');
+      }
+      &.item02 {
+        background-image: url('../images/kv_02.png');
+      }
+    }
+  }
+}

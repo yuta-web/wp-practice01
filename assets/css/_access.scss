@@ -1,0 +1,45 @@
+section.access {
+  .sales_time {
+    margin-top: 80px;
+    > h5 {
+      @include text(2.0rem, 30px,0.08em);
+      font-weight: 800;
+      text-align: center;
+    }
+    > p {
+      margin-top: 20px;
+      @include text(2.4rem, 30px,0.08em);
+      font-weight: 500;
+      text-align: center;
+    }
+  }
+  .adress {
+    margin-top: 40px;
+    > h5 {
+      @include text(2.0rem, 30px,0.08em);
+      font-weight: 800;
+      text-align: center;
+    }
+    > p {
+      @include text(2.0rem, 30px,0.08em);
+      text-align: center;
+    }
+    > p:nth-of-type(1) {
+      margin-top: 20px;
+    }
+  }
+  .map {
+    width: 100%;
+    height: 262px;
+    margin-top: 40px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .map {
+    display: block;
+    max-width: 1080px;
+    height: 400px;
+    margin: 0 auto;
+  }
+}

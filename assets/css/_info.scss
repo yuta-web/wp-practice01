@@ -1,0 +1,274 @@
+section.info {
+  max-width: 1280px;
+  margin: 0 auto;
+  background-color: #F7F7F7;
+  .room_info {
+    margin: 80px 0 50px;
+    @include text(2.4rem, 30px,0.08em);
+    text-align: center;
+    font-weight: 800;
+    position: relative;
+    &::after {
+      @include pseudo;
+      @include btmLine(90px);
+    }
+  }
+
+  .room_contents {
+    .room_item {
+      margin-bottom: 80px;
+      .room_image {
+        img {
+          width: 100%;
+        }
+      }
+      .room_text {
+        padding-top: 40px;
+        .room_name {
+          @include text(2.0rem, 20px,0.08em);
+        }
+        .room_ex {
+          margin-top: 20px;
+          @include text(1.4rem, 20px,0.08em);
+          font-weight: 500;
+        }
+        .money {
+          margin-top: 20px;
+          @include text(2.0rem, 20px,0.08em);
+          font-weight: 800;
+        } 
+        > h5 {
+          margin: 40px 0 20px;
+          padding-left: 10px;
+          @include text(1.6rem, 16px,0.08em);
+          font-weight: 800;
+          position: relative;
+          &::before {
+            @include pseudo;
+            width: 3px;
+            height: 16px;
+            background-color: $black;
+            position: absolute;
+            top: 0px;
+            left: 0;
+          }
+        }
+        dl {
+          display: flex;
+          padding: 15px 0;
+          border-bottom: solid 1px #CDCDCD;
+          dt {
+            width: 50%;
+            @include text(1.4rem, 14px, 0.08em);
+            font-weight: 800;
+          }
+          dd {
+            width: 50%;
+            @include text(1.4rem, 14px, 0.08em);
+            font-weight: 500;
+          }
+          &:last-of-type {
+            dd {
+              @include text(1.4rem, 14px, 0.08em);
+              .mt_15 {
+                display: block;
+                margin-top: 15px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .activity_contents {
+    padding-top: 80px;
+    .activity {
+      margin-bottom: 50px;
+      @include text(2.4rem, 30px, 0.08em);
+      text-align: center;
+      position: relative;
+      font-weight: 800;
+      &::after {
+        @include pseudo;
+        @include btmLine(106px);
+      }
+    }
+    .act_items {
+      .item {
+        margin-bottom: 40px;
+        img {
+          width: 100%;
+        }
+        .text {
+          .act_name {
+            margin: 20px 0 30px;
+            @include text(2.0rem, 30px, 0.08em);
+            font-weight: 800;
+            position: relative;
+            &::after {
+              @include pseudo;
+              position: absolute;
+              width: 80px;
+              height: 3px;
+              border-radius: 1.5px;
+              background-color: $black;
+              bottom: -15px;
+              left: 0;
+            }
+          }
+          .act_ex {
+            @include text(1.6rem, 30px, 0.08em);
+            font-weight: 500;
+          }
+        }
+      }
+    }
+  }
+
+  .menu_contents {
+    padding-top: 80px;
+    .menu {
+      @include text(2.4rem, 30px, 0.08em);
+      margin-bottom: 50px;
+      font-weight: 800;
+      text-align: center;
+      position: relative;
+      &::after {
+        @include pseudo;
+        @include btmLine(126px);
+      }
+    }
+    .menu_items {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      .menu_item {
+        width: calc(50% - 11px);
+        margin-bottom: 40px;
+        > img {
+          width: 100%;
+        }
+        .menu_name {
+          @include text(1.6rem, 30px, 0.08em);
+          margin-top: 20px;
+          font-weight: bold;
+        }
+        .menu_ex {
+          margin-top: 17px;
+          @include text(1.4rem, 20px, 0.08em);
+          font-weight: 500;
+        }
+        .menu_price {
+          margin-top: 20px;
+          @include text(1.6rem, 30px, 0.08em);
+          font-weight: 800;
+          text-align: right;
+        }
+      }
+    }
+  }
+
+  .rental_contents {
+    padding-top: 40px;
+    .rental {
+      margin-bottom: 50px;
+      @include text(2.4rem, 30px, 0.08em);
+      text-align: center;
+      font-weight: 800;
+      position: relative;
+      &::after {
+        @include pseudo;
+        @include btmLine(125px);
+      }
+    }
+    .rental_items {
+      img {
+        width: 100%;
+      }
+      .rental_text {
+        p:nth-of-type(1) {
+          margin-top: 40px;
+          @include text(2.0rem, 30px, 0.08em);
+          font-weight: 800;
+        }
+        p:nth-of-type(2) {
+          margin-top: 30px;
+          @include text(1.6rem, 30px, 0.08em);
+          font-weight: 500;
+        }
+        .rental_price {
+          margin-top: 70px;
+          @include text(2.0rem, 30px, 0.08em);
+          text-align: right;
+          font-weight: 800;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  section.info {
+  
+    .room_contents {
+      .room_item {
+        @include pc;
+        margin-bottom: 80px;
+        .room_image {
+          width: calc(50% - 20px);
+        }
+        .room_text {
+          width: calc(50% - 20px);
+          padding-top: 0;
+        }
+        &:nth-of-type(2n-1) {
+          flex-direction: row-reverse;
+        }
+      }
+    }
+  
+    .activity_contents {
+      .act_items {
+        @include pc;
+        flex-wrap: wrap;
+        .item {
+          width: calc(50% - 20px);
+          margin-bottom: 40px;
+        }
+      }
+    }
+  
+    .menu_contents {
+      padding-top: 80px;
+      .menu_items {
+        max-width: 1080px;
+        margin: 0 auto;
+        .menu_item {
+          width: calc(33% - 6px);
+        }
+      }
+    }
+  
+    .rental_contents {
+      .rental_items {
+        .item {
+          @include pc;
+          margin-bottom: 40px;
+          img {
+            width: calc(50% - 20px);
+          }
+          .rental_text {
+            width: calc(50% - 20px);
+            p:nth-of-type(1) {
+              margin-top: 0;
+            }
+            .rental_price {
+              margin-top: 40px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+@charset "utf-8";
+
+$black: #262626;
+$gold: #AA8711;
+
+@import './mixin';
+@import './header';
+@import './kv';
+@import './about';
+@import './info';
+@import './access';
+@import './reserve';
+@import './contact';
+@import './footer';
+
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  body {
+    margin: 0 auto;
+    color: $black;
+    section {
+      padding: 120px 30px;
+    }
+    h1,h2,h3,h4,h5,p,a {
+      font-family: YuMincho;
+    }
+    .sec_ttl {
+      @include text(2.5rem, 25px, 0.08em);
+      text-align: center;      
+      font-weight: 800;
+    }
+    @media screen and (min-width: 500px) {
+      .sec_ttl {
+        @include fz_vw(32);
+      }
+    }
+    @media screen and (min-width: 768px) {
+      .sec_ttl {
+        font-size: 3.2rem;
+      }
+    } 
+    .gold {
+      display: block;
+      margin-top: 15px;
+      color: $gold;
+      @include text(1.4rem, 30px, 0.1em);
+    }
+    a {
+      transition: 0.3s;
+      &:hover {
+        opacity: .7;
+      }
+    }
+  }
+}
